@@ -21,11 +21,14 @@
 }
 
 /** General Style Info **/
+h1,h2,h3,h4,label,legend,input,select,textarea,div{
+	color: #000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}	
+
 #ez body {
 	background: #003d4c;
-	color: #fff;
-	font-family:'lucida grande',verdana,helvetica,arial,sans-serif;
-	font-size:90%;
 	margin: 0;
 }
 #ez a {
@@ -113,21 +116,9 @@
 #ez div.form,
 #ez div.index,
 #ez div.view {
-	float:right;
-	width:76%;
-	border-left:1px solid #666;
-	padding:10px 2%;
+	width:92%;
+	padding:10px 2.5%;
 }
-#ez div.actions {
-	float:left;
-	width:16%;
-	padding:10px 1.5%;
-}
-#ez div.actions h3 {
-	padding-top:0;
-	color:#777;
-}
-
 
 /** Tables **/
 #ez table {
@@ -721,3 +712,78 @@ fieldset fieldset legend {
 	display:none;
 }
 /** Login **/
+
+#ez.login-layout{
+	background-color: #333333;
+}	
+#ez .login-bg{
+	background-image: url(/img/ez/logo_fondo.png);
+	background-position: left bottom;
+	background-repeat: no-repeat;
+	width: 348px;
+	height: 343px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 0;
+}
+#ez.login-layout #container{
+	position: absolute;
+    top:50%;
+    margin-top: -86px;
+    left: 50%;
+    margin-left: -280px;
+    padding: 10px;
+}
+#ez.login-layout #content{
+	background-color: #F4F2F2;
+    border: 1px solid #000000;
+    box-shadow: 1px 3px 2px #201F1F;
+    width: 560px;
+    background-image: url(/img/ez/ez_logo.png);
+    background-position: 45px 38px;
+    background-repeat: no-repeat;
+    height: 200px;
+	padding: 10px; 	 
+}
+#ez.login-layout .input{
+	float: right;
+    width: 300px;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+#ez.login-layout #content label{
+	color: #000000;
+    font-size: 14px;
+    margin-bottom: 8px;	
+}
+#ez.login-layout #content input{
+	height: 27px;
+	border:1px solid #333333;
+	padding:0;
+	padding-left: 3px;
+	font-size: 12px;
+}
+#ez.login-layout #content .submit input{
+	background-image: url(/img/ez/trama_boton.png);
+    border-color: #666666;
+    box-shadow: 1px 3px 2px #A9A8A8;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    height: 31px;
+    text-transform: uppercase;
+    width: 110px;
+    float: right;
+}
+#ez.login-layout #footer{
+	color:#fff;
+	font-size: 12px;
+	margin-top: 11px;
+	padding-right: 46px;
+}
+#ez.login-layout #footer img{
+	width: 50px;
+}
