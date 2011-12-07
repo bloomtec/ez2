@@ -2,11 +2,9 @@
 /config/dump.sql
 /app/tmp/cache/*
 !/app/tmp/cache/empty
-
 !/app/tmp/cache/models/empty
 !/app/tmp/cache/persistent/empty
 !/app/tmp/cache/views/empty
-
 /app/tmp/logs/*
 !/app/tmp/logs/empty
 /app/tmp/sessions/*
