@@ -50,7 +50,7 @@ class AppController extends Controller {
 		//$email = new CakeEmail('gmail');
 		//debug($email->sender('ricardopandales@gmail.com','Prueba cake'));
 		if(isset($this->params["prefix"]) && $this->params["prefix"] == "admin"){
-			$this -> layout = "ez/defoult";
+			$this -> layout = "ez/default";
 			$this -> Auth -> loginRedirect = array("controller" => "pages", "action" => "ez", "admin" => true);
 			//$this -> Auth -> deny($this->action);
 			$this -> Auth -> allow($this->action);
