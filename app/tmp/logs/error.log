@@ -1,0 +1,22 @@
+2011-12-06 17:54:51 Error: [MissingActionException] Action UsersController::admin_login() could not be found.
+#0 /var/www/ez2/lib/Cake/Routing/Dispatcher.php(107): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ez2/lib/Cake/Routing/Dispatcher.php(89): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ez2/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2011-12-06 17:55:32 Error: [MissingViewException] View file "/var/www/ez2/app/View/Users/admin_login.ctp" is missing.
+#0 /var/www/ez2/lib/Cake/View/View.php(363): View->_getViewFileName(NULL)
+#1 /var/www/ez2/lib/Cake/Controller/Controller.php(900): View->render(NULL, NULL)
+#2 /var/www/ez2/lib/Cake/Routing/Dispatcher.php(114): Controller->render()
+#3 /var/www/ez2/lib/Cake/Routing/Dispatcher.php(89): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ez2/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2011-12-06 17:57:53 Error: [MissingViewException] View file "/var/www/ez2/app/View/Users/admin_login.ctp" is missing.
+#0 /var/www/ez2/lib/Cake/View/View.php(363): View->_getViewFileName(NULL)
+#1 /var/www/ez2/lib/Cake/Controller/Controller.php(900): View->render(NULL, NULL)
+#2 /var/www/ez2/lib/Cake/Routing/Dispatcher.php(114): Controller->render()
+#3 /var/www/ez2/lib/Cake/Routing/Dispatcher.php(89): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/ez2/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2011-12-06 18:36:10 Error: [MissingControllerException] Controller class AdminController could not be found.
+#0 /var/www/ez2/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
