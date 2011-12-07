@@ -21,6 +21,7 @@
  */
 
 App::uses('Controller', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
 
 /**
  * This is a placeholder class.
@@ -46,10 +47,13 @@ class AppController extends Controller {
 );
 
 	function beforeFilter(){
+		//$email = new CakeEmail('gmail');
+		//debug($email->sender('ricardopandales@gmail.com','Prueba cake'));
 		if(isset($this->params["prefix"]) && $this->params["prefix"] == "admin"){
 			$this -> layout = "ez/defoult";
 			$this -> Auth -> loginRedirect = array("controller" => "pages", "action" => "ez", "admin" => true);
-			$this -> Auth -> deny($this->action);
+			//$this -> Auth -> deny($this->action);
+			$this -> Auth -> allow($this->action);
 
 		}else{
 			$this -> Auth -> loginRedirect = array("controller" => "users", "action" => "profile");

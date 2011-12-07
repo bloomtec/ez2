@@ -26,7 +26,19 @@
 			if (strpos($action, 'add') !== false && $field == $primaryKey) {
 				continue;
 			} elseif (!in_array($field, array('created', 'modified', 'updated'))) {
-				echo "\t\techo \$this->Form->input('{$field}');\n";
+				switch($field){
+					case "verified_email":
+					case "is_active":
+						if($action == 'add'){
+							echo "\t\techo \$this->Form->input('{$field}',array('checked'=>true));\n";
+						}else{
+							echo "\t\techo \$this->Form->input('{$field}');\n";
+						}
+					break;
+					default:
+						echo "\t\techo \$this->Form->input('{$field}');\n";
+					break;
+				}	
 			}
 		}
 		if (!empty($associations['hasAndBelongsToMany'])) {
