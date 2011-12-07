@@ -20,3 +20,8 @@
 2011-12-06 18:36:10 Error: [MissingControllerException] Controller class AdminController could not be found.
 #0 /var/www/ez2/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2011-12-07 14:57:24 Error: [MissingActionException] Action UsersController::index() could not be found.
+#0 /var/www/ez2/lib/Cake/Routing/Dispatcher.php(107): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/ez2/lib/Cake/Routing/Dispatcher.php(89): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/ez2/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

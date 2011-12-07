@@ -26,6 +26,16 @@ class UsersController extends AppController {
 			}
 		}
 	}	
+	/**
+ * register method
+ *
+ * @return void
+ */
+	public function verifyEmail() {
+		if ($this->request->is('post')) {
+			//Codigo de verificacion
+		}
+	}
 /**
  * login method
  *
