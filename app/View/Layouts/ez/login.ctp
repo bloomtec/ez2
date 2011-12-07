@@ -29,7 +29,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
+		echo $this->Html->css('ez');
+		echo $this->Html->css('cms');
 
 		echo $scripts_for_layout;
 	?>
@@ -42,6 +43,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		<div id="content">
 
 			<?php echo $this->Session->flash(); ?>
+			<?php echo $this->Session->flash('auth'); ?>
 
 			<?php echo $content_for_layout; ?>
 
