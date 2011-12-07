@@ -6,6 +6,10 @@
 			<th><?php echo $this->Paginator->sort('role_id');?></th>
 			<th><?php echo $this->Paginator->sort('email');?></th>
 			<th><?php echo $this->Paginator->sort('password');?></th>
+			<th><?php echo $this->Paginator->sort('is_active');?></th>
+			<th><?php echo $this->Paginator->sort('verified_email');?></th>
+			<th><?php echo $this->Paginator->sort('created');?></th>
+			<th><?php echo $this->Paginator->sort('updated');?></th>
 			<th class="actions"><?php echo __('Actions');?></th>
 	</tr>
 	<?php
@@ -18,6 +22,10 @@
 		</td>
 		<td><?php echo h($user['User']['email']); ?>&nbsp;</td>
 		<td><?php echo h($user['User']['password']); ?>&nbsp;</td>
+		<td><?php echo h($user['User']['is_active']); ?>&nbsp;</td>
+		<td><?php echo h($user['User']['verified_email']); ?>&nbsp;</td>
+		<td><?php echo h($user['User']['created']); ?>&nbsp;</td>
+		<td><?php echo h($user['User']['updated']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $user['User']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $user['User']['id'])); ?>

@@ -6,6 +6,8 @@
 		echo $this->Form->input('role_id');
 		echo $this->Form->input('email');
 		echo $this->Form->input('password');
+		echo $this->Form->input('is_active');
+		echo $this->Form->input('verified_email');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit'));?>

@@ -21,6 +21,26 @@
 			<?php echo h($user['User']['password']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Is Active'); ?></dt>
+		<dd>
+			<?php echo h($user['User']['is_active']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Verified Email'); ?></dt>
+		<dd>
+			<?php echo h($user['User']['verified_email']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Created'); ?></dt>
+		<dd>
+			<?php echo h($user['User']['created']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Updated'); ?></dt>
+		<dd>
+			<?php echo h($user['User']['updated']); ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">
