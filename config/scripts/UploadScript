@@ -1,0 +1,47 @@
+#!/bin/bash
+#--DEFINIR CONEXIONES Y RUTAS--
+DB_SERVER='mysql.bloomweb.co'
+DB_DATABASE='bloomweb_excelenter'
+DUMP_PATH='../dump.sql'
+SSH_CONN_STRING='embalao@bloomweb.co'
+PATH_TO_IMAGES='../../app/webroot/img/uploads'
+PATH_TO_UPLOAD='/home/embalao/excelenter.bloomweb.co/app/webroot/img'
+#--DEFINIR EL SCRIPT--
+clear
+echo "--------------------------------------------------"
+echo "Iniciando dump SQL..."
+echo "--------------------------------------------------"
+mysqldump -u bloomweb -prr40r900343 ${DB_DATABASE} > ${DUMP_PATH}
+sleep 2
+echo "--------------------------------------------------"
+echo "Finalizado el dump SQL..."
+echo "--------------------------------------------------"
+ssh embalao@bloomweb.co -L 13306:${DB_SERVER}:3306 -N &
+echo "--------------------------------------------------"
+echo "Esperando que se cree el tunel mediante SSH..."
+echo "--------------------------------------------------"
+sleep 10
+echo "--------------------------------------------------"
+echo "Cerradas las conexiones SSH..."
+echo "Ingresar los datos a la BD remota..."
+echo "--------------------------------------------------"
+mysql -u bloomweb -prr40r900343 -h 127.0.0.1 --port=13306 ${DB_DATABASE} < ${DUMP_PATH}
+echo "--------------------------------------------------"
+echo "Los datos se debieron de haber ingresado."
+echo "En caso de error revisar que la BD destino exista."
+echo "--------------------------------------------------"
+sleep 2
+echo "--------------------------------------------------"
+echo "Terminar el proceso ssh..."
+echo "Se cerrarán TODAS las conexiones SSH..."
+echo "----------------------------------------------"
+killall ssh
+sleep 2
+echo "--------------------------------------------------"
+echo "Subiendo imagenes al servidor..."
+echo "--------------------------------------------------"
+scp -r ${PATH_TO_IMAGES} ${SSH_CONN_STRING}:${PATH_TO_UPLOAD}
+sleep 2
+echo "--------------------------------------------------"
+echo "Terimanada subida de imagenes."
+echo "--------------------------------------------------"
