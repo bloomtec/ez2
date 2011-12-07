@@ -1,7 +1,10 @@
 .project
 /config/dump.sql
-/app/tmp/cache/*
-!/app/tmp/cache/empty
+#/app/tmp/cache/*
+#!/app/tmp/cache/empty
+/app/tmp/cache/models/*
+/app/tmp/cache/persistent/*
+/app/tmp/cache/views/*
 !/app/tmp/cache/models/empty
 !/app/tmp/cache/persistent/empty
 !/app/tmp/cache/views/empty
