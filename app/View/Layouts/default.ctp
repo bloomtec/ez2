@@ -29,8 +29,11 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
-
+		echo $this->Html->css('styles');
+		echo $this->Html->script('jquery');
+		echo $this->Html->script('jquery.tools.min');
+		echo $this->Html->script('bjs');
+		echo $this->Html->script('default');
 		echo $scripts_for_layout;
 	?>
 </head>

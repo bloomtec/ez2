@@ -31,7 +31,7 @@ class UsersController extends AppController {
  *
  * @return void
  */
-	public function verifyEmail() {
+	public function validateEmail() {
 		if ($this->request->is('post')) {
 			//Codigo de verificacion
 		}
@@ -43,18 +43,51 @@ class UsersController extends AppController {
  */
 	public function login() {
 		$this->layout = "login";
-		if($this->request -> is('post')){
+		if($this->request -> is('ajax')){
+			if($this -> Auth -> login()){
+				$this -> User -> recursive = -1;
+				$user = $this -> User -> read(null,$this -> Auth -> user ('id'));
+				$user['success'] = true;
+				echo json_encode($user);
+			}else{
+				$response['message'] = __('Username or password is incorrect',true);
+				$response['success'] = false;
+				$this -> capchaFuncionality();
+				echo json_encode($response);
+			}
+			$this -> autoRender = false;
+			exit(0);
+		}elseif($this->request -> is('post')){
 			if($this->Auth->login()){
 				return $this->redirect($this->Auth->redirect());
 			}else{
+				$this -> capchaFuncionality();
 				$this->Session->setFlash(__('Username or password is incorrect'), 'default', array(), 'auth');
 			}
-			
+		}	
+	}
+/**
+ * capcha funcionality  method
+ *
+ * @return void
+ */
+	public function capchaFuncionality(){
+		if(Configure::read('capcha')){
+			$logginAttempts = $this -> Session -> read('loginAttempts');
+			$logginAttempts = $logginAttempts ? ($logginAttempts +1): 1;
+			$this -> Session -> write('loginAttempts',$logginAttempts);
+			if($logginAttempts >= Configure::read('loginAttempts')){
+			// FUNCIONALIDAD CPACHA
+			}
 		}
-		if($this->request -> is('ajax')){
-			$this->Auth->login($this->request->data['User']);
-			echo true;
-		}
+		return true;
+	}
+/**
+ * capcha generator method
+ *
+ * @return void
+ */	
+	public function capcha(){
 		
 	}
 /**

@@ -33,6 +33,14 @@
  * In development mode, you need to click the flash message to continue.
  */
 	Configure::write('debug', 1);
+/**
+ * Customize parameters
+ * loginAttempts
+ * 
+ * 
+ */
+	Configure::write('capcha',false);
+	Configure::write('loginAttempts',3);
 
 /**
  * Configure the Error handler used to handle errors for your application.  By default
