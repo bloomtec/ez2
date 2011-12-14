@@ -34,30 +34,32 @@ App::uses('CakeEmail', 'Network/Email');
  * @link http://book.cakephp.org/view/957/The-App-Controller
  */
 class AppController extends Controller {
+	
 	public $components = array(
-    'Auth'=> array(
-        'authenticate' => array(
-            'Form' => array(
-                'fields' => array('username' => 'email'),
-                'scope' => array('is_active'=>true)
-            )
-        )
-    ),
-    'Session'
-);
+	    'Auth'=> array(
+	        'authenticate' => array(
+	            'Form' => array(
+	                'fields' => array(
+	                	'username' => 'email',
+	                	'password' => 'password'
+	                ),
+	                'scope' => array('is_active' => true)
+	            )
+	        )
+	    ),
+	    'Session'
+	);
 
-	function beforeFilter(){
-		//$email = new CakeEmail('gmail');
-		//debug($email->sender('ricardopandales@gmail.com','Prueba cake'));
+	function beforeFilter() {
 		if(isset($this->params["prefix"]) && $this->params["prefix"] == "admin"){
 			$this -> layout = "ez/default";
 			$this -> Auth -> loginRedirect = array("controller" => "pages", "action" => "ez", "admin" => true);
-			//$this -> Auth -> deny($this->action);
-			$this -> Auth -> allow($this->action);
-
+			$this -> Auth -> deny($this->action);
+			//$this -> Auth -> allow($this->action);
 		}else{
 			$this -> Auth -> loginRedirect = array("controller" => "users", "action" => "profile");
 			$this -> Auth -> allow($this->action);
 		}
 	}
+	
 }

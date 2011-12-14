@@ -1,10 +1,10 @@
 #!/bin/bash
 #--DEFINIR CONEXIONES Y RUTAS--
 DB_SERVER='mysql.bloomweb.co'
-DB_DATABASE='bloomweb_excelenter'
+DB_DATABASE='bloomweb_ez2'
 DUMP_PATH='../dump.sql'
 SSH_CONN_STRING='embalao@bloomweb.co'
-PATH_TO_IMAGES='/home/embalao/excelenter.bloomweb.co/app/webroot/img/uploads'
+PATH_TO_IMAGES='/home/embalao/ez2.bloomweb.co/app/webroot/img/uploads'
 PATH_TO_DOWNLOAD='../../app/webroot/img/'
 #--DEFINIR EL SCRIPT--
 clear

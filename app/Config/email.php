@@ -41,6 +41,44 @@
  *
  */
 class EmailConfig {
+	
+	/**
+	 * Configuraciones extras
+	 */
+	public $registration = array(
+		'from' => 'pruebas@bloomweb.co',
+		'sender' => null,
+		'to' => null,
+		'cc' => null,
+		'bcc' => null,
+		'replyTo' => null,
+		'readReceipt' => null,
+		'returnPath' => null,
+		'messageId' => true,
+		'subject' => null,
+		'message' => null,
+		'headers' => null,
+		'viewRender' => null,
+		'template' => false,
+		'layout' => false,
+		'viewVars' => null,
+		'attachments' => null,
+		'emailFormat' => null,
+		'transport' => 'Smtp',
+		'host' => 'localhost',
+		'port' => 25,
+		'timeout' => 30,
+		'username' => 'user',
+		'password' => 'secret',
+		'client' => null,
+		'log' => true,
+		//'charset' => 'utf-8',
+		//'headerCharset' => 'utf-8',
+	);
+	
+	/**
+	 * Configuraciones por defecto
+	 */
 
 	public $default = array(
 		'transport' => 'Mail',
@@ -48,14 +86,6 @@ class EmailConfig {
 		//'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',
 	);
-	
-	 public $gmail = array(
-        'host' => 'ssl://smtp.gmail.com',
-        'port' => 465,
-        'username' => 'ricardopandales@gmail.co',
-        'password' => 'RR40r900343',
-        'transport' => 'Smtp'
-    );
 
 	public $smtp = array(
 		'transport' => 'Smtp',

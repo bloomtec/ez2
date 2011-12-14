@@ -5,7 +5,7 @@ DB_DATABASE='bloomweb_excelenter'
 DUMP_PATH='../dump.sql'
 SSH_CONN_STRING='embalao@bloomweb.co'
 PATH_TO_IMAGES='../../app/webroot/img/uploads'
-PATH_TO_UPLOAD='/home/embalao/excelenter.bloomweb.co/app/webroot/img'
+PATH_TO_UPLOAD='/home/embalao/ez2.bloomweb.co/app/webroot/img'
 #--DEFINIR EL SCRIPT--
 clear
 echo "--------------------------------------------------"
